@@ -1,34 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
+  const iframeSrc = import.meta.env.VITE_IFRAME_SRC as string | undefined
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <header style={{ padding: '12px 16px', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
+        <h1 style={{ margin: 0, fontSize: '18px' }}>Wrapper App</h1>
+      </header>
+      <div style={{ flex: 1, minHeight: 0 }}>
+        <iframe
+          src={iframeSrc}
+          title="Embedded App"
+          style={{ border: 'none', width: '100%', height: '100%' }}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
