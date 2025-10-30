@@ -1,5 +1,5 @@
 function App() {
-  const iframeSrc = import.meta.env.VITE_IFRAME_SRC as string | undefined
+  const iframeSrc = import.meta.env.VITE_IFRAME_URL as string | undefined
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
