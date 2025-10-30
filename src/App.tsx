@@ -2,7 +2,7 @@ function App() {
   const iframeSrc = import.meta.env.VITE_IFRAME_URL as string | undefined
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', width: '100vw' }}>
       <header style={{ padding: '12px 16px', borderBottom: '1px solid rgba(0,0,0,0.1)' }}>
         <h1 style={{ margin: 0, fontSize: '18px' }}>Wrapper App</h1>
       </header>
@@ -10,7 +10,7 @@ function App() {
         <iframe
           src={iframeSrc}
           title="Embedded App"
-          style={{ border: 'none', width: '100%', height: '100%' }}
+          style={{ display: 'block', border: 'none', width: '100vw', height: '100vh', justifySelf: 'center' }}
         />
       </div>
     </div>
